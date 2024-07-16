@@ -149,6 +149,21 @@ async def pm_sh(client, inline_query):
 
 
 
+if in_user.is_fake or in_user.is_scam:
+        await message.reply("**sᴇᴘᴇʀᴛɪɴʏᴀ ᴀɴᴅᴀ ᴍᴇɴᴄᴜʀɪɢᴀᴋᴀɴ...**")
+        return await client.block_user(in_user.id)
+    if in_user.is_support or in_user.is_verified or in_user.is_self:
+        return
+    if siapa in DEVS:
+        try:
+            await add_approved_user(chat_id)
+            await client.send_message(
+                chat_id,
+                f"<b>ᴍᴇɴᴇʀɪᴍᴀ ᴘᴇsᴀɴ ᴅᴀʀɪ {rpk} !!\nᴛᴇʀᴅᴇᴛᴇᴋsɪ ғᴏᴜɴᴅᴇʀ ᴅᴀʀɪ ᴡɪʟᴅᴀɴ-ᴜsᴇʀʙᴏᴛ.</b>",
+                parse_mode=enums.ParseMode.HTML,
+
+              
+
 async def pm_ok(client, message):
     user = message.chat
     rpk = f"[{user.first_name} {user.last_name or ''}](tg://user?id={user.id})"
