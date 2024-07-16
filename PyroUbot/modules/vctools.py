@@ -11,10 +11,10 @@ __HELP__ = f"""
   <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}stopvc</code>
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇɴɢᴀᴋʜɪʀɪ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ɢʀᴜᴘ.
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}startvc</code>
+  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}joinvc</code>
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ʙᴇʀɢᴀʙᴜɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ɢʀᴜᴘ.
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}startvc</code>
+  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}leavevc</code>
   <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇɴɪɴɢɢᴀʟᴋᴀɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ɢʀᴜᴘ.
 """
 
