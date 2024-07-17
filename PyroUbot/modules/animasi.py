@@ -1,41 +1,41 @@
 from PyroUbot import *
 
-__MODULE__ = "Animasi"
+__MODULE__ = "animasi"
 __HELP__ = """
- Bantuan Untuk Animasi
+ <b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀɴɪᴍᴀsɪ 』</b>
 
-<b>• Perintah: <code>{PREFIX[0]}loveyou or {0}hmm</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}loveyou or {0}hmm</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}kntl</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}kntl</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}penis</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}penis</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{0}heli or {0}tembak</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}heli or {0}tembak</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}bundir or {0}awk</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}bundir or {0}awk</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}y or {0}tank</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}y or {0}tank</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}ajg or {0}babi</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}ajg or {0}babi</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah: <code>{PREFIX[0]}nah or {0}spongebob</code>
-<b>• Penjelasan: Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}nah or {0}spongebob</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah:  <code>{PREFIX[0]}ange or {0}lipkol</code>
-<b>• Penjelasan:  Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}ange or {0}lipkol</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah:  <code>{PREFIX[0]}nakal or {0}piss</code>
-<b>• Penjelasan:  Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}nakal or {0}piss</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 
-<b>• Perintah:  <code>{PREFIX[0]}kocok</code>
-<b>• Penjelasan:  Coba sendiri.
+<b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}kocok</code>
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴄᴏʙᴀ sᴇɴᴅɪʀɪ.
 """
 
 
