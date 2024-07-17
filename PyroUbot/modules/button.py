@@ -5,7 +5,7 @@ __HELP__ = f"""
  <b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʙᴜᴛᴛᴏɴ 』</b>
 
 <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}button</code> Teks ~ Button Teks|Button Link.
-<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> Untuk membuat teks menjadi button.
+<b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴛᴇᴋs ᴍᴇɴᴊᴀᴅɪ ʙᴜᴛᴛᴏɴ.
 
 • Contoh : Google ~ Klik Disini|google.com
 """
