@@ -14,7 +14,7 @@ from pyrogram import *
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 from pyrogram.types import *
 
-from ubot import *
+from PyroUbot import *
 
 DEFAULTUSER = "Nay"
 
