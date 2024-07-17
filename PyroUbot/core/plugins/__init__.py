@@ -47,4 +47,6 @@ from PyroUbot.core.plugins.gratis import *
 from PyroUbot.core.plugins.anm import *
 from PyroUbot.core.plugins.asp import *
 from PyroUbot.core.plugins.btn import *
+from PyroUbot.core.plugnis.fn import *
+from PyroUbot.core.plugnis.stf import *
 
