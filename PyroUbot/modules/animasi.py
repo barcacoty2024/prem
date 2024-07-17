@@ -1,7 +1,7 @@
 from PyroUbot import *
 
 __MODULE__ = "animasi"
-__HELP__ = """
+__HELP__ = f"""
  <b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴀɴɪᴍᴀsɪ 』</b>
 
 <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{PREFIX[0]}loveyou or {0}hmm</code>
