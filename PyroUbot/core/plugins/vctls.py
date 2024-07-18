@@ -121,4 +121,5 @@ async def end_vc_(client: Client, message: Message):
     ):
         return
     await client.send(DiscardGroupCall(call=group_call))
-    await edit_or_reply(message, f"**Obrolan Suara Diakhiri**\n • **Chat ID** : `{chat_id}`"
+    await edit_or_reply(message, 
+ msg = f"**Obrolan Suara Diakhiri**\n • **Chat ID** : `{chat_id}`"
