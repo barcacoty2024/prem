@@ -73,7 +73,7 @@ async def end_vc_(client: Client, message: Message):
     await client.send(DiscardGroupCall(call=group_call))
     await ky.edit(f"<emoji id={gagal}>❎</emoji> <b>ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ʙᴇʀʜᴀsɪʟ ᴅɪ ᴍᴀᴛɪᴋᴀɴ</b>\n <emoji id={alasan}>⚠️</emoji><b>Chat</b> : {message.chat.title}")
 
-    )
+    
 
 
 
