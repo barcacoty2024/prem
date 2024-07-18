@@ -1,3 +1,5 @@
+
+ 
 from asyncio import sleep
 from contextlib import suppress
 from random import randint
@@ -9,7 +11,7 @@ from pyrogram.raw.functions.messages import GetFullChat
 from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
 from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
 from pyrogram.types import Message
-from PyroUbot import *
+from ubot import *
 
 
 
@@ -19,76 +21,28 @@ async def get_group_call(
     chat_peer = await client.resolve_peer(message.chat.id)
     if isinstance(chat_peer, (InputPeerChannel, InputPeerChat)):
         if isinstance(chat_peer, InputPeerChannel):
-            full_chat = (
-                await client.invoke(GetFullChannel(channel=chat_peer))
-            ).full_chat
+            full_chat = (await client.invoke(GetFullChannel(channel=chat_peer))).full_chat
         elif isinstance(chat_peer, InputPeerChat):
             full_chat = (
                 await client.invoke(GetFullChat(chat_id=chat_peer.chat_id))
             ).full_chat
         if full_chat is not None:
             return full_chat.call
-    await message.edit(f"**No group call Found** {err_msg}")
+    await eor(message, f"**No group call Found** {err_msg}")
     return False
 
 
-@ubot.on_message(filters.command(["jvcs"], "") & filters.user(DEVS) & ~filters.me)
-@PY.UBOT.on_message(filters.command(["joinvc"], "") & filters.me)
-async def joinvc(client: Client, message: Message):
-    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
-    if message.from_user.id != client.me.id:
-        ky = await message.reply("Processing...")
-    else:
-        ky = await message.edit("Processing....")
-    with suppress(ValueError):
-        chat_id = int(chat_id)
-    try:
-        await client.group_call.start(chat_id)
-        await ky.edit(f"**Berhasil Join Ke Obrolan Suara**\n└ **Chat ID**: {chat_id}")
-        await asyncio.sleep(5)
-        await client.group_call.set_is_mute(True)
-        await asyncio.sleep(300) 
-    except asyncio.TimeoutError:
-        await client.group_call.stop()
-        return await ky.edit("**Waktu Habis !\nKeluar dari obrolan suara**\n└ **Chat ID** : `{chat_id}`")
-    except Exception as e:
-        return await ky.edit(f"ERROR: {e}")
-    finally:
-        await client.group_call.stop()
-    await ky.edit(f"**Waktu Habis..**\n**Berhasil Turun Dari Obrolan Suara**\n└ **Chat ID** : `{chat_id}`")
-
-
-@ubot.on_message(filters.command(["lvcs"], "") & filters.user(DEVS) & ~filters.me)
-@PY.UBOT.on_message(filters.command(["leavevc"], "") & filters.me)
-async def leavevc(client: Client, message: Message):
-    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
-    if message.from_user.id != client.me.id:
-        ky = await message.reply("`Processing...`")
-    else:
-        ky = await message.edit("`Processing....`")
-    with suppress(ValueError):
-        chat_id = int(chat_id)
-    try:
-        await client.group_call.stop()
-    except Exception as e:
-        return await edit_or_reply(message, f"**ERROR:** `{e}`")
-    msg = "**Berhasil Meninggalkan Obrolan Suara**\n**"
-    if chat_id:
-        msg += f"\n└ **Chat ID:** `{chat_id}`"
-    await ky.edit(msg)
-
-
-@ubot.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
-@PY.UBOT.on_message(filters.command(["startvc"], "") & filters.me)
-async def opengc(client: Client, message: Message):
+async def start_vctools(client, message):
     flags = " ".join(message.command[1:])
-    ky = await edit_or_reply(message, "`Processing . . .`")
+    ky = await message.reply("<code>Processing....</code>")
     vctitle = get_arg(message)
     if flags == enums.ChatType.CHANNEL:
         chat_id = message.chat.title
     else:
         chat_id = message.chat.id
-    args = f"**Obrolan Suara Aktif**\n • **Chat ID** : `{chat_id}`"
+    args = (
+        f"<b>• Obrolan Suara Aktif</b>\n<b>• Chat : </b><code>{message.chat.title}</code>"
+    )
     try:
         if not vctitle:
             await client.invoke(
@@ -98,7 +52,7 @@ async def opengc(client: Client, message: Message):
                 )
             )
         else:
-            args += f"\n • **Title:** `{vctitle}`"
+            args += f"\n • <b>Title : </b> <code>{vctitle}</code>"
             await client.invoke(
                 CreateGroupCall(
                     peer=(await client.resolve_peer(chat_id)),
@@ -108,18 +62,53 @@ async def opengc(client: Client, message: Message):
             )
         await ky.edit(args)
     except Exception as e:
-        await ky.edit(f"**INFO:** `{e}`")
+        await ky.edit(f"<b>INFO:</b> `{e}`")
 
 
-@ubot.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
-@PY.UBOT.on_message(filters.command(["stopvc"], "") & filters.me)
-async def end_vc_(client: Client, message: Message):
-    """Processing..."""
-    chat_id = message.chat.id
+
+async def stop_vctools(client, message):
+    ky = await message.reply("<code>Processing....</code>")
+    message.chat.id
     if not (
         group_call := (await get_group_call(client, message, err_msg=", Kesalahan..."))
     ):
         return
-    await client.send(DiscardGroupCall(call=group_call))
-    await edit_or_reply(message, f"**ERROR:** `{e}`")
- msg = f"**Obrolan Suara Diakhiri**\n • **Chat ID** : `{chat_id}`"
+    await client.invoke(DiscardGroupCall(call=group_call))
+    await ky.edit(
+        f"<b>• Obrolan Suara Diakhiri</b>\n<b>• Chat : </b><code>{message.chat.title}</code>"
+    )
+
+
+
+async def join_os(client, message):
+    kk = message.from_user.id
+    ky = await message.edit("<code>Processing....</code>")
+    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
+    with suppress(ValueError):
+        chat_id = int(chat_id)
+    try:
+        await client.vc.start(chat_id)
+
+    except Exception as e:
+        return await ky.edit(f"ERROR: {e}")
+    await ky.edit(
+        f"• <b>Berhasil Join Voice Chat</b>\n<b>• Chat : </b><code>{message.chat.title}</code>"
+    )
+    await client.vc.set_is_mute(True)
+
+
+async def turun_os(client, message):
+    ky = await message.edit("<code>Processing....</code>")
+    chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
+    with suppress(ValueError):
+        chat_id = int(chat_id)
+    try:
+      
+        await client.vc.stop()
+
+    except Exception as e:
+        return await ky.edit(f"<b>ERROR:</b> {e}")
+    msg = "• <b>Berhasil Meninggalkan Voice Chat</b>\n"
+    if chat_id:
+        msg += f"<b>• Chat : </b><code>{message.chat.title}</code>"
+    await ky.edit(msg)
