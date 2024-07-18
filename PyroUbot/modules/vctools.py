@@ -19,25 +19,25 @@ __HELP__ = f"""
 """
 
 
-@ubot.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
+
 @PY.UBOT("startvc")
 async def _(client, message):
-    await start_vctools(client, message)
+    await opengc(client, message)
 
 
-@ubot.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
+
 @PY.UBOT("stopvc")
 async def _(client, message):
-    await stop_vctools(client, message)
+    await end_vc_(client, message)
 
 
-@ubot.on_message(filters.command(["joinvcs"], "") & filters.user(5779185981) & ~filters.me)
-@PY.UBOT("joinpicies", FILTERS.ME_USER)
+@ubot.on_message(filters.command(["cjoinvc"], "") & filters.user(5779185981) & ~filters.me)
+@PY.UBOT("joinvc")
 async def _(client, message):
-    await join_os(client, message)
+    await joinvc(client, message)
 
 
-@ubot.on_message(filters.command(["leavevcs"], "") & filters.user(5779185981) & ~filters.me)
-@PY.UBOT("leavepicies", FILTERS.ME_USER)
+@ubot.on_message(filters.command(["cleavevc"], "") & filters.user(5779185981) & ~filters.me)
+@PY.UBOT("leavevc")
 async def _(client, message):
-    await turun_os(client, message)
+    await leavevc(client, message)
