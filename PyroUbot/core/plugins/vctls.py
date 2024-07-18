@@ -32,7 +32,7 @@ async def get_group_call(
     return False
 
 
-@PY.UBOT.on_message(filters.command(["jvcs"], "") & filters.user(DEVS) & ~filters.me)
+@ubot.on_message(filters.command(["jvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT.on_message(filters.command(["joinvc"], "") & filters.me)
 async def joinvc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
@@ -58,7 +58,7 @@ async def joinvc(client: Client, message: Message):
     await ky.edit(f"**Waktu Habis..**\n**Berhasil Turun Dari Obrolan Suara**\n└ **Chat ID** : `{chat_id}`")
 
 
-@PY.UBOT.on_message(filters.command(["lvcs"], "") & filters.user(DEVS) & ~filters.me)
+@ubot.on_message(filters.command(["lvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT.on_message(filters.command(["leavevc"], "") & filters.me)
 async def leavevc(client: Client, message: Message):
     chat_id = message.command[1] if len(message.command) > 1 else message.chat.id
@@ -78,7 +78,7 @@ async def leavevc(client: Client, message: Message):
     await ky.edit(msg)
 
 
-@PY.UBOT.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
+@ubot.on_message(filters.command(["startvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT.on_message(filters.command(["startvc"], "") & filters.me)
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
@@ -111,7 +111,7 @@ async def opengc(client: Client, message: Message):
         await ky.edit(f"**INFO:** `{e}`")
 
 
-@PY.UBOT.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
+@ubot.on_message(filters.command(["stopvcs"], "") & filters.user(DEVS) & ~filters.me)
 @PY.UBOT.on_message(filters.command(["stopvc"], "") & filters.me)
 async def end_vc_(client: Client, message: Message):
     """Processing..."""
