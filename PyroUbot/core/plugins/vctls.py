@@ -28,8 +28,8 @@ async def get_group_call(client: Client, message: Message, err_msg: str = "") ->
     return False
 
 
-async def start_vctools(client, message):
-async def opengc(client, message):
+
+async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
     sukses = await get_vars(client.me.id, "EMOJI_SUKSES") or "6246660083808210143"
     alasan = await get_vars(client.me.id, "EMOJI_ALASAN") or "6249259608469146625"
